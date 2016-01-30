@@ -9,6 +9,8 @@ Other pre-request packages include:
 Httplib2(https://pypi.python.org/pypi/httplib2 )
 Guess language 0.2(https://pypi.python.org/pypi/guess-language )
 Google geocoding API
+* You can run install.sh to install them.    
+
 ## Tips For Google geocoding API
 In this project, we use Google geocoding API in foursq_profiles.py. We provide 10 geocoding API for an example.</br>
    Please do not use these for large-scale tests. ＜/br＞
