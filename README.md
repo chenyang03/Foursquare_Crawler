@@ -8,14 +8,7 @@ This crawler is written in Python 2.7.11
 Other pre-request packages include:
 Httplib2(https://pypi.python.org/pypi/httplib2 )
 Guess language 0.2(https://pypi.python.org/pypi/guess-language )
-Google geocoding API
 * You can run install.sh to install them.    
-
-## Tips For Google geocoding API
-In this project, we use Google geocoding API in foursq_profiles.py. We provide 10 geocoding API for an example.</br>
-   Please do not use these for large-scale tests. ＜/br＞
-   You can sign up a Google account to get your own API. The maximum usage of this API is 2500 times per day.</br>
-
 # Output Format
    This crawler returns a json format profile.</br>
    example format:</br>
@@ -37,7 +30,6 @@ In this project, we use Google geocoding API in foursq_profiles.py. We provide 1
                        "polarity": 0.049(_sentiment test score_),      
                        "timespam": "1450378655",      
                        "text": "xxxxx",      
-                       "venue country": "US",      
                        "len": 148(_length of the text_),      
                        "photo": "y ",      
                        "venue name": "Mimi Cheng's"     

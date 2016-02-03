@@ -193,28 +193,7 @@ category_Travel_Transport = ['Cruise', 'Metro Station', 'Transportation Service'
                              'Subway', 'Taxi Stand', 'Taxi', 'Toll Booth', 'Toll Plaza', 'Tourist Information Center',
                              'Train Station', 'Platform', 'Train', 'Tram', 'Travel Lounge', 'Tunnel']
 
-GEOCODING_URL = 'https://maps.googleapis.com/maps/api/geocode/json?address='
 
-Google_API_Keys = ['AIzaSyD8zBWwbv5UAlfZ7YittgVzfs31G3H2KyU',
-                    'AIzaSyAR-NUbG99drNehTxrQn1in5_C8QUsTH_o',
-                    'AIzaSyBeV4ZYNNQdL3CvIbyAEQQJ2371qVX7sq8',
-                    'AIzaSyBAcJm8CFC9LtdHdKm96enmIX9a-Gsv-6o',
-                    'AIzaSyAlCSky-q8LLIDmJ2wHjoDryeKbBM9iSZE',
-                    'AIzaSyCp5Bijwt48JvL-bcobe1e-hUhdlAked7Q',
-                    'AIzaSyDAkTem-C8eEzkpCjl5ezeUXKvCtJ5RKD8',
-                    'AIzaSyAuIVWJZ2a6SxT5PFdbfOVN6K7fOGF1aUs',
-                    'AIzaSyBrsxuwaIG60IRamo-t4vl9xj4e37O-d8s',
-                    'AIzaSyAH9EiMRfjhRvEXfAfGeFge0NfqFRQxDD0',
-                    'AIzaSyC90coXfr9X9iH6Rso9BaxJBeY4RBgVNvg',
-                    'AIzaSyDQ-8AtdxXjFOqghd0nTMRDwZQVhiq5jmY',
-                    'AIzaSyA2V7ItlCklN7zkw_0NdNrUkFU0E5U-CtE',
-                    'AIzaSyD-pbZjJAWkEm8y2w82v0zQXKEftAq5ppM',
-                    'AIzaSyAb27PQagD8nIlJAAJTpeW9jEfBfJXkVdA',
-                    'AIzaSyAADutaXZbfwmKO9k3DxoIQN7-HysVRu6U',
-                    'AIzaSyDh73Bdmu-S4SN4VkPdR6rWbnydEpOicpQ',
-                    'AIzaSyDsDxv72suhwtCRi_MeDUaPPlh1pvBSwxU',
-                    'AIzaSyA_DovVcmaSs0RD8HEI5EhAubKlLhpANaI',
-                    'AIzaSyBBrjyxDWlj1rKe_staWBbPT7ap8nAAQmk']
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
