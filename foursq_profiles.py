@@ -1,7 +1,7 @@
 # -*-coding: utf-8-*-
 import json
 from foursq_utils import *
-from google_geodecoding import *
+
 
 
 sys_api_token = 0
@@ -55,7 +55,7 @@ def fetch_user_profile(UID):
         user_info.setdefault('user id', str(UID))
         user_info.setdefault('imgURL', data['photo']['prefix'] + '256x256' + data['photo']['suffix'])
         user_info.setdefault('address', data['homeCity'])
-        user_info.setdefault('country', get_country(data['homeCity']))
+        
         if data['gender'] == 'male':
             gender = 'm'
         elif data['gender'] == 'female':
