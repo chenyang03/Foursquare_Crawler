@@ -14,12 +14,14 @@ Guess language 0.2(https://pypi.python.org/pypi/guess-language )
    example format:</br>
    
     {   
-           "user info": {     
-           "country": "US",      
-           "address": "New York, NY",     
-           "user id": "32",      
+           "user info": { 
+           "gender": "m"(_m for male and f for female_),
+           "twitter": "dens",
+           "user id": "32",
+           "facebook": "803834",    
+           "address": "New York, NY",         
            "exist": (_1 for yes 0 for no_),      
-           "gender": "m"(_m for male and f for female_),     
+           "friends count": 834   
            "imgURL": xxxx(_user icon url_)
            },        
            "tips": {     
@@ -28,11 +30,13 @@ Guess language 0.2(https://pypi.python.org/pypi/guess-language )
                    { 
                        "category": "Food",     
                        "polarity": 0.049(_sentiment test score_),      
-                       "timespam": "1450378655",      
+                       "timestamp": "1450378655", 
+                       "agreecount": 2
                        "text": "xxxxx",      
                        "len": 148(_length of the text_),      
                        "photo": "y ",      
-                       "venue name": "Mimi Cheng's"     
+                       "venue name": "Mimi Cheng's",   
+                       "disagreecount": 0
                     }, 
                     ..._other tips_... 
                 ] 
