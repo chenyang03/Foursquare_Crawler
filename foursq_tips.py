@@ -4,7 +4,6 @@ import guess_language
 from textblob import TextBlob
 from foursq_utils import *
 
-
 def get_venue_category(venue_category_name):
     if venue_category_name in category_Arts_Entertainment:
         return 'Arts_Entertainment'
@@ -31,6 +30,7 @@ def get_venue_category(venue_category_name):
 
 
 def fetch_usr_tips(user_id):
+    users_with_tips = 0
     success = 0
     retry = 0
     content = ''
@@ -38,7 +38,7 @@ def fetch_usr_tips(user_id):
         try:
             super_token = 'QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP'
             fetch_url_str = 'https://api.foursquare.com/v2/users/' + str(user_id) + '/tips?oauth_token='+super_token + \
-                            '&limit=5000&v=20141231'
+                            '&limit=5000&v=20190115'
             content = get_raw_info(fetch_url_str)
             if content != -1 and content != -2:
                 success = 1
@@ -58,23 +58,37 @@ def fetch_usr_tips(user_id):
         return output_dict
 
     output_dict['count'] = content_json['response']['tips']['count']
+    if content_json['response']['tips']['count'] != 0:
+        users_with_tips = 1
     for item in (content_json['response']['tips']['items']):
-        if 'cc' in item['venue']['location']:
-            venue_country = item['venue']['location']['cc']
+        if 'venue' in item:
+            if 'cc' in item['venue']['location']:
+                venue_country = item['venue']['location']['cc']
+            else:
+                venue_country = '-'
+            venue_name = item['venue']['name'].encode('utf-8')
+            cate_info = item['venue']['categories']
         else:
+            venue_name = '-'
             venue_country = '-'
+            cate_info = ''
+        agreeCount = item['agreeCount']
+        disagreeCount = item['disagreeCount']
         a = {}
         a['len'] = len(item['text'])
         a['text'] = item['text'].encode('utf-8')
-        a['venue name'] = item['venue']['name'].encode('utf-8')
+        a['venue name'] = venue_name
         a['timespam'] = str(item['createdAt'])
         a['venue country'] = venue_country
+        a['agreeCount'] = agreeCount
+        a['disagreeCount'] = disagreeCount
 
         if 'photo' in item:
             a['photo'] = "y "
         else:
             a['photo'] = "n "
-        cate_info = item['venue']['categories']
+
+
         if len(cate_info) > 0:
             for xx in cate_info:
                 a['category'] = get_venue_category(xx['name'])
@@ -90,5 +104,4 @@ def fetch_usr_tips(user_id):
         else:
             a['polarity'] = '-'
         output_dict['tips content'].append(a)
-    return output_dict
-
+    return output_dict, users_with_tips
