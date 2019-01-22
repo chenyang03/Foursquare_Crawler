@@ -41,9 +41,9 @@ def fetch_anonymous_token():
 def fetch_user_profile(UID):
     if sys_client_version == 0 or sys_api_token == 0:
         fetch_anonymous_token()
-
-    url = 'https://api.foursquare.com/v2/users/' + str(UID) + '?oauth_token=' + str(sys_api_token) + '&v=' + str(
-        sys_client_version)
+    #url = 'https://api.foursquare.com/v2/users/' + str(UID) + '?oauth_token=' + str(sys_api_token) + '&v=' + str(sys_client_version)
+    super_token = 'QEJ4AQPTMMNB413HGNZ5YDMJSHTOHZHMLZCAQCCLXIX41OMP'
+    url = 'https://api.foursquare.com/v2/users/' + str(UID) + '?oauth_token=' + super_token + '&v=20190115'
     try:
         raw = get_raw_info(url)
         data = json.loads(raw)
@@ -55,6 +55,15 @@ def fetch_user_profile(UID):
         user_info.setdefault('user id', str(UID))
         user_info.setdefault('imgURL', data['photo']['prefix'] + '256x256' + data['photo']['suffix'])
         user_info.setdefault('address', data['homeCity'])
+        user_info.setdefault('friends count', data['friends']['count'])
+        if 'facebook' in data['contact']:
+            user_info.setdefault('facebook', data['contact']['facebook'])
+        else:
+            user_info.setdefault('facebook', '-')
+        if 'twitter' in data['contact']:
+            user_info.setdefault('twitter', data['contact']['twitter'])
+        else:
+            user_info.setdefault('twitter', '-')
         
         if data['gender'] == 'male':
             gender = 'm'
@@ -66,4 +75,3 @@ def fetch_user_profile(UID):
         return user_info
     except:
         return -1
-
