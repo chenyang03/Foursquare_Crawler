@@ -2,9 +2,9 @@
 # foursquare_crawler
 This crawler is designed to collect information from Foursquare website(www.foursquare.com ).</br>Using Foursquare API.</br> 
 # System Requirements
-Ubuntu (Version: 14.04). This project haven’t been tested on other platform.
+Ubuntu (Version: 16.04). This project haven’t been tested on other platform.
 # Pre-request Packages
-This crawler is written in Python 2.7.11
+This crawler is written in Python 2.7.12
 Other pre-request packages include:
 Httplib2(https://pypi.python.org/pypi/httplib2 )
 Guess language 0.2(https://pypi.python.org/pypi/guess-language )
